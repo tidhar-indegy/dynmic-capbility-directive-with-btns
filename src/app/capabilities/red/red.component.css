@@ -1,0 +1,10 @@
+input[type="button" i] {
+  background:red!important;
+  color:white;
+}
+
+:host{
+  display: inline-block;
+  background: red;
+  max-width: 100px;
+}

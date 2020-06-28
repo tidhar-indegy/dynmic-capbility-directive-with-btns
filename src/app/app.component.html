@@ -1,0 +1,20 @@
+
+
+<textarea
+     [ngStyle]="{'background-color':currentColor}"
+     [appRed]=colorsVcr
+     [appBlue]=colors2Vcr
+     (onDone)=done($event)>
+</textarea>
+
+
+	<h1>Menu</h1>
+  <p class='dirs'>
+    Group 1: 
+	  <ng-container #container_one></ng-container>
+  </p>
+
+  <p>
+    Group 2: 
+	  <ng-container #container_two></ng-container>
+  </p>
