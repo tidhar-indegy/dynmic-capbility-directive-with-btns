@@ -15,4 +15,9 @@ export class AppComponent {
   done(evt: any) {
     console.log('Done', evt);
   }
+
+  moveRedToGroup2(evt:MouseEvent){
+    evt.currentTarget['disabled'] = true;
+    this.colorsVcr = this.colors2Vcr
+  }
 }

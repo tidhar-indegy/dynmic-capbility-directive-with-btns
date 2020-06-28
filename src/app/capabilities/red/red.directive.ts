@@ -20,27 +20,41 @@ import { AppComponent } from "../../app.component";
   providers: [CompGeneratorService]
 })
 export class RedDirective {
+  private _currentVCR: ViewContainerRef;
   @Output() onDone = new EventEmitter();
   _onClickBtn = new Subject();
 
-  @Input("appRed") set ref(vcr) {
-    if (vcr) {
-      this.compGeneratorService.createComponent(
-        RedComponent,
-        vcr,
-        this._onClickBtn
-      );
-
-      this._onClickBtn.subscribe(c => {
-        this.host.currentColor = "red";
-        setTimeout(() => this.onDone.emit("red"), 300);
-      });
-    }
+  @Input("appRed") set ref(vcr: ViewContainerRef) {
+    this.clear();
+    this.createBtnComponent(vcr);
   }
   constructor(
     private compGeneratorService: CompGeneratorService,
     private host: AppComponent
   ) {}
 
-  ngOnDestroy() {}
+  private clear() {
+    if (this._currentVCR) {
+      this._currentVCR.clear();
+    }
+  }
+
+  private registerToClick() {
+    this._onClickBtn.subscribe(c => {
+      this.host.currentColor = "red";
+      setTimeout(() => this.onDone.emit("red"), 300);
+    });
+  }
+
+  private createBtnComponent(vcr: ViewContainerRef) {
+    if (vcr) {
+      this._currentVCR = vcr;
+      this.compGeneratorService.createComponent(
+        RedComponent,
+        vcr,
+        this._onClickBtn
+      );
+      this.registerToClick();
+    }
+  }
 }
