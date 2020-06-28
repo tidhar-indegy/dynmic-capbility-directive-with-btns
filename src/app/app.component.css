@@ -1,2 +1,12 @@
-.dirs{
+.content{
+  width:50vw;
+  height: 40vh;
+  display:inline-block;
+  border: 1px solid black;
+}
+
+.menu{
+  float: left;
+  width:40vw;
+  height: 100vh;
 }

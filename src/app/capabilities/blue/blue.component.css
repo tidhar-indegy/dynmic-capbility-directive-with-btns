@@ -5,6 +5,5 @@ input[type="button" i] {
 
 :host{
   display: inline-block;
-  background: blue;
   max-width: 100px;
 }

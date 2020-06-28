@@ -1,20 +1,9 @@
-
-
-<textarea
-     [ngStyle]="{'background-color':currentColor}"
-     [appRed]=colorsVcr
-     [appBlue]=colors2Vcr
-     (onDone)=done($event)>
-</textarea>
-
-
+<div class="menu">
 	<h1>Menu</h1>
-  <p class='dirs'>
-    Group 1: 
-	  <ng-container #container_one></ng-container>
-  </p>
+<h2>Group 1: <ng-container #container_one></ng-container></h2>
+	<h2>Group 2:	<ng-container #container_two></ng-container></h2>
+</div>
 
-  <p>
-    Group 2: 
-	  <ng-container #container_two></ng-container>
-  </p>
+<div class="content" [ngStyle]="{'background-color':currentColor}" [appRed]=colorsVcr [appBlue]=colors2Vcr
+	(onDone)=done($event)>
+</div>
