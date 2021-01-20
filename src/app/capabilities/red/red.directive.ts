@@ -3,11 +3,7 @@ import {
   Output,
   Input,
   EventEmitter,
-  Host,
-  AfterViewChecked,
-  ChangeDetectionStrategy,
-  ViewContainerRef,
-  SkipSelf
+  ViewContainerRef
 } from "@angular/core";
 import { Subject } from "rxjs";
 import { CompGeneratorService } from "../../services/comp-generator.service";

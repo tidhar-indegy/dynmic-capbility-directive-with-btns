@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  Output,
-  Input,
-} from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Subject } from "rxjs";
 
 @Component({

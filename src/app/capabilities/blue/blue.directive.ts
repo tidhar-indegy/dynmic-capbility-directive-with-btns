@@ -28,7 +28,6 @@ export class BlueDirective {
     }
   }
   constructor(
-   private vcr: ViewContainerRef,
    private compGeneratorService: CompGeneratorService,
    private host:AppComponent
    ) {}
