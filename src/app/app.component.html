@@ -1,13 +1,12 @@
 <div class="menu">
-	<h1><u>Menu</u></h1>
-  <h4>Group 1: <ng-container #container_one></ng-container></h4>
-	<h4>Group 2:	<ng-container #container_two></ng-container></h4>
+  <h1><u>Menu</u></h1>
+  <h4>Group 1: <ng-container #container_one></ng-container>
+  </h4>
+  <h4>Group 2: <ng-container #container_two></ng-container>
+  </h4>
   <button (click)="moveRedToGroup2($event)">Move Red To Group 2</button>
 </div>
 
-<div class="content" 
-  [ngStyle]="{'background-color':currentColor}"
-  [appRed]=colorsVcr
-  [appBlue]=colors2Vcr
-	(onDone)=done($event)>
+<div class="content" [ngStyle]="{'background-color':currentColor}" [appRed]="colorsVcr" [appBlue]="colors2Vcr"
+  (onDone)=done($event)>
 </div>
